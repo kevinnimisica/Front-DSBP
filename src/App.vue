@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+    <router-view/>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/home">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
   </div>
 </template>
+
 
 <style>
 #app {
