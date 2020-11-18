@@ -7,10 +7,8 @@ Vue.use(VueRouter)
 
 
 const ifAuthenticated = (to, from, next) => {
-  if (!store.getters["isAuthenticated"]) {      
-    store
-        .then(() => next())
-        .catch(() => next("/login"));
+  if (store.getters["isAuthenticated"]) {      
+    next()
     return;
   } else {
     next('/login')

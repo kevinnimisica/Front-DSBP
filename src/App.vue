@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
-    <router-view/>
-    <div id="nav">
-      <router-link to="/home">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <md-card>
+      <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+      <div id="nav">
+        <router-link to="/home">Home</router-link> |
+        <router-link to="/about">About</router-link>
+      </div>
+      <router-view/>
+    </md-card>
   </div>
 </template>
 
