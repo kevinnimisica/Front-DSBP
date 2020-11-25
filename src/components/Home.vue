@@ -1,11 +1,11 @@
 <template>
 <div>
     <form @submit.prevent="search">
-        <md-card>
-            <md-card-header>
+        <div>
+            <div>
                 <h1 class="md-title">Búsqueda de Artículos</h1>
-            </md-card-header>
-            <md-card-content>
+            </div>
+            <div>
                 <div>
                     <label>Palabras clave: </label>
                     <input required v-model="palabrasClave"/>
@@ -18,8 +18,8 @@
                         {{index}} - {{item}}
                     </li>
                 </ul>
-            </md-card-content>
-        </md-card>
+            </div>
+        </div>
     </form>
 </div>
 </template>
@@ -39,7 +39,7 @@ export default {
         search(){
             Searching.search(this.palabrasClave)
             .then((response)=>this.results.concat(response.data))
-            .catch();
+            .catch((error)=>console.log(error));
         },
     }
 

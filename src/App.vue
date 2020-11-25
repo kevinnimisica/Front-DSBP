@@ -2,10 +2,6 @@
   <div id="app">
     <md-card>
       <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
-      <div id="nav">
-        <router-link to="/home">Home</router-link> |
-        <router-link to="/about">About</router-link>
-      </div>
       <router-view/>
     </md-card>
   </div>
@@ -21,16 +17,4 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

@@ -34,8 +34,7 @@ export default {
   },
   methods: {
     login() {
-      this.$router.push({ name: "home" });
-      /*this.$store
+      this.$store
         .dispatch("login", {
           username: this.username,
           password: this.password,
@@ -48,7 +47,7 @@ export default {
         .catch(() => {
           this.incorrectCredentials = true;
         });
-    */},
+    },
   },
 }
 </script>
