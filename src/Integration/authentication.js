@@ -4,7 +4,7 @@ export const Authentication = {
     login: function (username, password) {
         return new Promise((resolve, reject) => {
             api
-                .post("/auth", { username, password })
+                .post("/user/v1/user", { userName:username, userPassword:password })
                 .then((response) => {
                     resolve(response.data);
                 })

@@ -13,11 +13,24 @@
                 <div>
                     <button class="button">Buscar</button>
                 </div>
-                <ul class="results">
-                    <li v-for="(item, index) in results" :key="item">
-                        {{index}} - {{item}}
-                    </li>
-                </ul>
+                <table class="results">
+                    <tr class="resultsHeader">
+                        <th>Index</th>
+                        <th>Identifier</th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>date</th>
+                        <th>Referencia</th>
+                    </tr>
+                    <tr v-for="(item, index) in results" :key="item">
+                        <th>{{index}}</th>
+                        <td>{{item.identifier}}</td>
+                        <td>{{item.title}}</td>
+                        <td>{{item.author}}</td>
+                        <td>{{item.date}}</td>
+                        <td>{{item.href}}</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </form>
@@ -32,13 +45,26 @@ export default {
     data(){
         return{
             palabrasClave: "",
-            results: []
+            results: [ {
+        identifier: "SCOPUS_ID:85091028790",
+        title: "Neurological complications with COVID-19: A contemporaneous review",
+        author: "Maramattom B.V.",
+        date: "July-August 2020",
+        href: "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85091028790&origin=inward"
+    },
+    {
+        identifier: "SCOPUS_ID:85089439114",
+        title: "Misconceptions on COVID-19 Risk Among Ugandan Men: Results From a Rapid Exploratory Survey, April 2020",
+        author: "Kasozi K.I.",
+        date: "28 July 2020",
+        href: "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85089439114&origin=inward"
+    }]
         };
     },
     methods:{
         search(){
             Searching.search(this.palabrasClave)
-            .then((response)=>this.results.concat(response.data))
+            .then((response)=>this.results = response.data)
             .catch((error)=>console.log(error));
         },
     }
@@ -59,6 +85,18 @@ export default {
   border-radius: 5px;
   border: none;
   padding: 0.4rem 0;
+}
+
+.resultsHeader {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: rgb(66, 203, 245);
+  color: white;
+}
+td, th{
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
 </style>
