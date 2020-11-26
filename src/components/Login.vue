@@ -6,9 +6,9 @@
             <h1>SPMP</h1>
           </div>
           <div class="container">
-            <input type="radio" name="signUp" v-model="signUp" v-bind:value="false">
+            <input type="radio" name="signUp" v-model="isSignUp" v-bind:value="false">
             <label for="signIn"> Sign In</label>
-            <input type="radio" name="signUp" v-model="signUp" v-bind:value="true">
+            <input type="radio" name="signUp" v-model="isSignUp" v-bind:value="true">
             <label for="signUp"> Sign Up</label>
           </div>
           <div class="container">
@@ -23,8 +23,8 @@
             <label>Password</label>
             <input required v-model="password" type="password" />
           </div>
-          <button class="login-button" type="sumbit" @click="login">Sign In</button>
-          <button class="login-button" type="sumbit" @click="signUp">Sign Up</button>
+          <button class="login-button" type="sumbit" @click="login" v-if="!isSignUp">Sign In</button>
+          <button class="login-button" type="sumbit" @click="signUp" v-if="isSignUp">Sign Up</button>
         </form>
       </div>
       <div v-if="incorrectCredentials" class="error-response">

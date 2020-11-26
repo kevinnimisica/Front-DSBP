@@ -23,12 +23,12 @@
                         <th>Referencia</th>
                     </tr>
                     <tr v-for="(item, index) in results" :key="item">
-                        <th>{{index}}</th>
+                        <th>{{index+1}}</th>
                         <td>{{item.identifier}}</td>
                         <td>{{item.title}}</td>
                         <td>{{item.author}}</td>
                         <td>{{item.date}}</td>
-                        <td>{{item.href}}</td>
+                        <td> <a v-bind:href="''+ item.href +''"> {{item.href}} </a></td>
                     </tr>
                 </table>
             </div>

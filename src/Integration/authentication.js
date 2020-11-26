@@ -16,10 +16,10 @@ export const Authentication = {
     signUp: function(username, email, password){
         return new Promise((resolve, reject)=>{
             api
-            .post("user/v1/register",{
+            .post("user/v1/user",{
                 userName: username,
-                userEmail: email,
-                userPassword: password
+                userMail: email,
+                userPass: password
             })
             .then((response=>{ 
                 resolve(response.data);
