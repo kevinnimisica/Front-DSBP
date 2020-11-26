@@ -12,5 +12,22 @@ export const Authentication = {
                     reject(response.status);
                 });
         });
+    },
+    signUp: function(username, email, password){
+        return new Promise((resolve, reject)=>{
+            api
+            .post("user/v1/register",{
+                userName: username,
+                userEmail: email,
+                userPassword: password
+            })
+            .then((response=>{ 
+                resolve(response.data);
+            }))
+            .catch((response)=>{
+                reject(response.status);
+            })
+        });
     }
+
 }

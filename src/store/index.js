@@ -30,6 +30,13 @@ export default new Vuex.Store({
           reject()
         }) ;
       });
+    },
+    signUp(context, infromation){
+      return new Promise((resolve, reject)=>{
+        Authentication.signUp(infromation.username, infromation.email, infromation.password)
+        .then(resolve())
+        .catch(reject())
+      });
     }
   },
   modules: {
