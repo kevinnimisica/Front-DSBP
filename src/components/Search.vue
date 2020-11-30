@@ -66,7 +66,7 @@ export default {
     methods:{
         search(){
             Searching.search(this.palabrasClave)
-            .then((response)=>this.results = response.data)
+            .then((response)=>this.results = response)
             .catch((error)=>console.log(error));
         },
     },
