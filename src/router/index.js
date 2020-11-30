@@ -38,6 +38,21 @@ const routes = [
     component: () => import("../views/Home.vue"),
     beforeEnter: ifAuthenticated,
 },
+{
+  path: "/search",
+  name: "search",
+  component: () => import("../components/Search.vue")
+},
+{
+  path: "/patients",
+  name: "patients",
+  component: () => import("../components/Patients.vue")
+},
+{
+  path: "/alarms",
+  name: "alarms",
+  component: () => import("../components/Alarms.vue")
+}
 ]
 
 const router = new VueRouter({

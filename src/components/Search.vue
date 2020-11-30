@@ -1,5 +1,6 @@
 <template>
 <div>
+    <NavBar/>
     <form @submit.prevent="search">
         <div>
             <div>
@@ -38,14 +39,15 @@
 </template>
 
 <script>
-import Searching from '../Integration/searching.js'
+import Searching from '../Integration/searching.js';
+import NavBar from './NavBar.vue'
 
 export default {
-    name: 'Home',
+    name: 'Search',
     data(){
         return{
             palabrasClave: "",
-            results: [ {
+            results: [{
         identifier: "SCOPUS_ID:85091028790",
         title: "Neurological complications with COVID-19: A contemporaneous review",
         author: "Maramattom B.V.",
@@ -67,6 +69,9 @@ export default {
             .then((response)=>this.results = response.data)
             .catch((error)=>console.log(error));
         },
+    },
+    components:{
+        NavBar,
     }
 
 }
@@ -85,6 +90,10 @@ export default {
   border-radius: 5px;
   border: none;
   padding: 0.4rem 0;
+}
+
+.results{
+    width: 100%;
 }
 
 .resultsHeader {

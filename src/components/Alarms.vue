@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <NavBar/>
-    <h1>Home</h1>
-    <img src="../assets/SMP.png"/>
+    <h1>Alarms</h1>
+    
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 import NavBar from '../components/NavBar.vue'
 
 export default {
-  name: 'home',
+  name: 'alarms',
   components: {
     NavBar
   }
