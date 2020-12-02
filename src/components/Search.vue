@@ -13,7 +13,9 @@
                 </div>
                 <div>
                     <button class="button">Buscar</button>
+                    <button class="button" v-on:click="clear()">Limpiar</button>
                 </div>
+
                 <table class="results">
                     <tr class="resultsHeader">
                         <th>Index</th>
@@ -47,20 +49,7 @@ export default {
     data(){
         return{
             palabrasClave: "",
-            results: [{
-        identifier: "SCOPUS_ID:85091028790",
-        title: "Neurological complications with COVID-19: A contemporaneous review",
-        author: "Maramattom B.V.",
-        date: "July-August 2020",
-        href: "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85091028790&origin=inward"
-    },
-    {
-        identifier: "SCOPUS_ID:85089439114",
-        title: "Misconceptions on COVID-19 Risk Among Ugandan Men: Results From a Rapid Exploratory Survey, April 2020",
-        author: "Kasozi K.I.",
-        date: "28 July 2020",
-        href: "https://www.scopus.com/inward/record.uri?partnerID=HzOxMe3b&scp=85089439114&origin=inward"
-    }]
+            results: []
         };
     },
     methods:{
@@ -69,12 +58,17 @@ export default {
             .then((response)=>this.results = response)
             .catch((error)=>console.log(error));
         },
+        clear(){
+            this.palabrasClave = "",
+            this.results = []
+        },
     },
     components:{
         NavBar,
     }
 
 }
+
 </script>
 
 <style scoped>

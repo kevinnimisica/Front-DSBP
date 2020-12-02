@@ -22,7 +22,7 @@ export default new Vuex.Store({
       return new Promise((resolve, reject)=>{
         Authentication.login(credentials.username, credentials.password)
         .then(()=>{
-          context.commit("authenticate", {auth: true, user: credentials.username}),
+          context.commit("athenticate", {auth: true, user: credentials.username}),
           resolve()
         })
         .catch(()=>{
