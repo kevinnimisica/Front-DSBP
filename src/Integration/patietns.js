@@ -3,7 +3,7 @@ import api from "./api";
 export default {
     getAlarms: function(){
         return new Promise((resolve, reject)=>{
-            api .get("/repository/v1/alarms")
+            api .get("/alarmas/v1/list")
             .then((response)=>{
                 resolve(response.data);
             })
