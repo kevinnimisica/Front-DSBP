@@ -3,7 +3,7 @@
       <div class="form">
         <form>
           <div>
-            <h1>SPMP</h1>
+            <h1>SMP</h1>
           </div>
           <div class="container">
             <input type="radio" name="signUp" v-model="isSignUp" v-bind:value="false">
